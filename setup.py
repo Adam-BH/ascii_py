@@ -5,11 +5,11 @@ with open("README.md", "r") as f:
 
 setup(
     name="ascii-python",
-    version="0.0.1",
+    version="0.1.0",
     description="A python package for making ascii art",
     long_description=README,
     long_description_content_type="text/markdown",
-    py_modules=["ImageClass"],
+    py_modules=["ascii_py"],
     package_dir={"": "src"},
     url="https://github.com/Adam-BH/ascii.py",
     author="Adam Bhouri",
