@@ -1,5 +1,4 @@
 import cv2
-import os
 
 
 class asciiImage:
@@ -15,23 +14,18 @@ class asciiImage:
         return self.CHARS[len(self.CHARS) - 1]
 
     def __checkInputs(self, p, w):
-
         if w == 0:
             print("[Error]: Image width cannot be zero")
             quit()
 
-        if os.path.isfile(p) == False:
-            print("[Error]: Image path must be valid")
-            quit()
-
         try:
             img = cv2.imread(p)
-            img = cv2.resize(img, (100, 100))
-        except:
-            print("Image is not a valid")
+            img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        except Exception as e:
+            print(f"{p} is not a valid image", e)
             quit()
 
-    def img2ascii(self, path, width=150):
+    def img2ascii(self, path, width=100):
         self.__checkInputs(path, width)
 
         img = cv2.imread(path, 0)

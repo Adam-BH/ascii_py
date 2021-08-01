@@ -5,7 +5,7 @@ with open("README.md", "r") as f:
 
 setup(
     name="ascii-python",
-    version="0.1.0",
+    version="0.1",
     description="A python package for making ascii art",
     long_description=README,
     long_description_content_type="text/markdown",
@@ -23,5 +23,5 @@ setup(
     install_requires=[
         "opencv-python",
     ],
-    extras_require={"dev": ["pytest"]},
+    extras_require={"dev": ["wheel", "sdist"]},
 )
